@@ -52,4 +52,7 @@ const seedProducts = async () => {
   process.exit();
 };
 
-seedProducts();
+// Only run if this file is executed directly (not imported)
+if (import.meta.url === `file://${process.argv[1]}`) {
+  seedProducts();
+}
